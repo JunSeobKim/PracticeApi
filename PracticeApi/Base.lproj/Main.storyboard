@@ -153,17 +153,49 @@
             </objects>
             <point key="canvasLocation" x="3249" y="846"/>
         </scene>
-        <!--Item-->
+        <!--Coin-->
         <scene sceneID="O4S-oa-QcV">
             <objects>
                 <viewController id="Q96-cr-Huo" customClass="CoinRankingViewController" customModule="PracticeApi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v26-fu-Tnz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coinRankingLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Nkh-HQ-g5x">
+                                <rect key="frame" x="20" y="54" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Thl-D1-LoE"/>
+                                    <constraint firstAttribute="height" constant="40" id="l7V-O2-DqQ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coinranking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otK-Ry-frY">
+                                <rect key="frame" x="68" y="60" width="109" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OIm-R4-Y5y">
+                                <rect key="frame" x="0.0" y="104" width="414" height="709"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="3Wg-nM-Sd2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Nkh-HQ-g5x" firstAttribute="leading" secondItem="3Wg-nM-Sd2" secondAttribute="leading" constant="20" id="1Cx-RY-dGb"/>
+                            <constraint firstItem="OIm-R4-Y5y" firstAttribute="leading" secondItem="3Wg-nM-Sd2" secondAttribute="leading" id="9aR-CY-3OJ"/>
+                            <constraint firstItem="3Wg-nM-Sd2" firstAttribute="bottom" secondItem="OIm-R4-Y5y" secondAttribute="bottom" id="ACd-bd-egx"/>
+                            <constraint firstItem="otK-Ry-frY" firstAttribute="leading" secondItem="Nkh-HQ-g5x" secondAttribute="trailing" constant="8" symbolic="YES" id="QCE-jF-JP5"/>
+                            <constraint firstItem="Nkh-HQ-g5x" firstAttribute="top" secondItem="3Wg-nM-Sd2" secondAttribute="top" constant="10" id="WJz-A0-ILm"/>
+                            <constraint firstItem="3Wg-nM-Sd2" firstAttribute="trailing" secondItem="OIm-R4-Y5y" secondAttribute="trailing" id="fRY-XP-dcQ"/>
+                            <constraint firstItem="OIm-R4-Y5y" firstAttribute="top" secondItem="otK-Ry-frY" secondAttribute="bottom" constant="20" id="kci-X6-ddd"/>
+                            <constraint firstItem="otK-Ry-frY" firstAttribute="top" secondItem="3Wg-nM-Sd2" secondAttribute="top" constant="16" id="tGy-U3-mgr"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="bGl-WD-X6H"/>
+                    <tabBarItem key="tabBarItem" title="Coin" image="coinRankingLogo" id="bGl-WD-X6H"/>
+                    <connections>
+                        <outlet property="coinTableView" destination="OIm-R4-Y5y" id="JC1-6N-axc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V8D-fe-jfc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -175,8 +207,11 @@
                 <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="Tug-PE-yyr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3X1-iK-01t">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="Q96-cr-Huo" kind="relationship" relationship="viewControllers" id="LQi-qB-pJM"/>
@@ -208,6 +243,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="coinRankingLogo" width="41" height="41"/>
         <image name="kakao_login_large_wide" width="300" height="45"/>
         <image name="mainImage" width="1512" height="1512.5"/>
         <systemColor name="systemBackgroundColor">
