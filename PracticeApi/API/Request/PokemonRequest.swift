@@ -8,17 +8,17 @@
 import UIKit
 import Alamofire
 
-class CoinRequest {
+class PokemonRequest {
     
-    func getCoinData(completion: @escaping (CoinResponse?) -> Void) {
+    func getPokemonData(name: String, completion: @escaping (PokemonResponse?) -> Void) {
         
-        let url = "https://api.coinranking.com/v2/coins?x-access-token=coinrankingfcaa97a54d92f843ab7bdbb61960295ac43c8202caff9250"
+        let url = "https://pokeapi.co/api/v2/pokemon/\(name)"
         
         // HTTP Method: GET
         AF.request(url,
                    method: .get,
                    headers: nil)
-            .responseDecodable(of: CoinResponse.self) { response in
+            .responseDecodable(of: PokemonResponse.self) { response in
                 
                 switch response.result {
                 
@@ -27,7 +27,7 @@ class CoinRequest {
                     
                     
                 case .failure(let error):
-                    print("DEBUG>> Coin Get Error : \(error.localizedDescription)")
+                    print("DEBUG>> Pokemon Get Error : \(error.localizedDescription)")
                     
                 }
             }
