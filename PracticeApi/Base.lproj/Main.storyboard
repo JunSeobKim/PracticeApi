@@ -85,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="2565" y="846"/>
         </scene>
-        <!--Item-->
+        <!--Kakao-->
         <scene sceneID="vMi-Dz-nkc">
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" id="5yS-WS-7kl" customClass="ProfileViewController" customModule="PracticeApi" customModuleProvider="target" sceneMemberID="viewController">
@@ -140,7 +140,7 @@
                             <constraint firstItem="fJ7-Ez-IE1" firstAttribute="centerX" secondItem="gIp-9M-N4k" secondAttribute="centerX" id="seP-SK-lZ6"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="q6M-aT-0TD"/>
+                    <tabBarItem key="tabBarItem" title="Kakao" image="kakao" id="q6M-aT-0TD"/>
                     <connections>
                         <outlet property="birthLabel" destination="u3W-VB-RNO" id="jxh-Mn-ufm"/>
                         <outlet property="genderLabel" destination="0r5-ha-olg" id="yfO-xX-QEl"/>
@@ -244,6 +244,7 @@
     </scenes>
     <resources>
         <image name="coinRankingLogo" width="41" height="41"/>
+        <image name="kakao" width="31" height="34"/>
         <image name="kakao_login_large_wide" width="300" height="45"/>
         <image name="mainImage" width="1512" height="1512.5"/>
         <systemColor name="systemBackgroundColor">

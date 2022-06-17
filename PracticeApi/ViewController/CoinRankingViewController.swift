@@ -14,9 +14,12 @@ class CoinRankingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         coinNetwork.getCoinData { response in
-            print("성공------------------------")
-            print(response!.data.coins)
+//            print("성공------------------------")
+//            print(response!.data.coins)
             self.coinData = response!.data.coins
             self.setupCoinTableView()
             self.coinTableView.reloadData()
