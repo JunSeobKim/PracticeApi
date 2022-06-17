@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -167,21 +168,36 @@
             </objects>
             <point key="canvasLocation" x="1882.608695652174" y="845.75892857142856"/>
         </scene>
-        <!--Item-->
+        <!--map-->
         <scene sceneID="YYF-vq-1ZZ">
             <objects>
-                <viewController id="yss-HU-cpn" sceneMemberID="viewController">
+                <viewController id="yss-HU-cpn" customClass="MapViewController" customModule="PracticeApi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pO9-BN-C9g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="koq-EW-1x7">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="OfB-57-CeQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="koq-EW-1x7" secondAttribute="bottom" constant="83" id="4Jg-WC-LKi"/>
+                            <constraint firstItem="koq-EW-1x7" firstAttribute="trailing" secondItem="OfB-57-CeQ" secondAttribute="trailing" id="VEv-EB-Tms"/>
+                            <constraint firstItem="koq-EW-1x7" firstAttribute="top" secondItem="OfB-57-CeQ" secondAttribute="top" id="lno-3v-wDL"/>
+                            <constraint firstItem="koq-EW-1x7" firstAttribute="leading" secondItem="OfB-57-CeQ" secondAttribute="leading" id="t3L-uz-ZKn"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="D8C-UP-hX9"/>
+                    <tabBarItem key="tabBarItem" title="map" image="map_pin.png" id="D8C-UP-hX9"/>
+                    <connections>
+                        <outlet property="subMapView" destination="koq-EW-1x7" id="pqe-18-KUG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mek-Hk-z1i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2565" y="846"/>
+            <point key="canvasLocation" x="2562.3188405797105" y="845.75892857142856"/>
         </scene>
         <!--Kakao-->
         <scene sceneID="vMi-Dz-nkc">
@@ -238,7 +254,9 @@
                             <constraint firstItem="fJ7-Ez-IE1" firstAttribute="centerX" secondItem="gIp-9M-N4k" secondAttribute="centerX" id="seP-SK-lZ6"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Kakao" image="kakao" id="q6M-aT-0TD"/>
+                    <tabBarItem key="tabBarItem" title="Kakao" id="q6M-aT-0TD">
+                        <imageReference key="image" image="message.fill" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="birthLabel" destination="u3W-VB-RNO" id="jxh-Mn-ufm"/>
                         <outlet property="genderLabel" destination="0r5-ha-olg" id="yfO-xX-QEl"/>
@@ -307,7 +325,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3X1-iK-01t">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -344,9 +362,10 @@
         <image name="ball" width="100" height="100"/>
         <image name="bgPoke" width="142" height="297.5"/>
         <image name="coinRankingLogo" width="41" height="41"/>
-        <image name="kakao" width="31" height="34"/>
         <image name="kakao_login_large_wide" width="300" height="45"/>
         <image name="mainImage" width="1512" height="1512.5"/>
+        <image name="map_pin.png" width="42" height="60"/>
+        <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="pokemon" width="155" height="70"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
